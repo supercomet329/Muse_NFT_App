@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <title>Muse | 本登録</title>
+    <!-- Required meta tags -->
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta charset="utf-8">
+    <!-- Icon -->
+    <link rel="shortcut icon" href="assets/img/icon/logo.png">
+    <link rel="apple-touch-icon" href="assets/img/icon/logo.png">
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Javascript(js/muse.js)読み込み -->
+    <script type="text/javascript" src="js/muse.js"></script>
+    <!-- Javascript(js/validate.js)読み込み -->
+    <script type="text/javascript" src="js/validate.js"></script>
+</head>
+
+<body>
+    <header class="popular_artist">
+        <nav class="fixed-top navbar navbar-light bg-light">
+            <a href="profile.html"><img src="assets/img/icon/profile.jpg" alt="profile" class="rounded-circle"></a>
+            <a href="picture_mode.html"><img src="assets/img/icon/logo.png" alt="logo"></a>
+            <div><img src="assets/img/icon/picture_blue.png" alt="change" data-toggle="modal" class="change-logo"></div>
+        </nav>
+    </header>
+
+    <div class="pt-sm-5 mt-sm-5">
+        <div class="container pt-5">
+            <form class="validateRegisterForm">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="text-center mt-1 mb-4 contents-title font-weight-bold">会員登録</h1>
+                    </div>
+                    <div class="col-12">
+                        <label for="username" class="label-text">ユーザーネーム</label>
+                    </div>
+                    <div class="col-12 pb-2">
+                        <input class="form-control register-form" type="text" name="username" id="username" placeholder="username">
+                    </div>
+                    <div class="col-12 pt-4">
+                        <label for="name" class="label-text">名前</label>
+                    </div>
+                    <div class="col-12 pb-2">
+                        <input class="form-control register-form" type="text" name="name" id="name" placeholder="namae">
+                    </div>
+                    <div class="col-12 pt-4">
+                        <label for="password" class="label-text">パスワード</label>
+                    </div>
+                    <div class="col-12 pb-2">
+                        <input class="form-control register-form" type="password" name="password" id="password" placeholder="Musepass1">
+                    </div>
+                    <div class="col-12">
+                        <div class="inputPwMsg mx-2" id="inputPwMsg"></div>
+                    </div>
+                    <div class="col-12 pt-4">
+                        <label for="password_confirmation" class="label-text">パスワードを再入力</label>
+                    </div>
+                    <div class="col-12 pb-2">
+                        <input class="form-control register-form" type="password" name="password_confirmation" id="password_confirmation" placeholder="Musepass1">
+                    </div>
+                    <div class="col-12 pb-4">
+                        <div class="inputPwConfirmMsg mx-2" id="inputPwConfirmMsg"></div>
+                    </div>
+                    <div class="col-12 text-center pt-3">
+                        <button type="submit" class="btn btn-primary text-white submit-btn" id="register-btn" disabled>新規登録</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <nav class="navbar navbar-light bg-light fixed-bottom">
+            <a href="normal_mode.html"><img src="assets/img/icon/home_blue_on.png" alt="home"></a>
+            <a href="post_search.html"><img src="assets/img/icon/search_blue.png" alt="search"></a>
+            <a href="post.html"><img src="assets/img/icon/post_blue.png" alt="post"></a>
+            <div class="notifications">
+                <a href="notification.html"><img src="assets/img/icon/notification_blue.png" alt="notification"></a>
+                <p class="unread-count rounded-circle">2000</p>
+            </div>
+            <div class="messages">
+                <a href="message.html"><img src="assets/img/icon/message_blue.png" alt="message"></a>
+                <p class="unread-count top-left rounded-circle">2000</p>
+            </div>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
