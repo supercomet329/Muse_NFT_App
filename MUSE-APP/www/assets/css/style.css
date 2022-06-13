@@ -405,6 +405,14 @@ ul.horizontal-list li.item img {
   border-bottom: dashed 1px #e0e0e0;
 }
 
+ .favorite-area .icon {
+  width: 24%;
+  height: 30px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
 .profile-area .favorite-area img {
   width: 60px;
   height: 60px;
@@ -430,6 +438,18 @@ ul.horizontal-list li.item img {
 
 .profile-area .request-btn {
   position: absolute; bottom: 0px; right: 7em;
+}
+
+.profile-area .follow-btn {
+  position: absolute; bottom: 0px; right: -0.2em;
+}
+
+.profile-area .dot-btn {
+  position: absolute; bottom: 0px; right: 8.5em;
+}
+
+.profile-area .message-btn {
+  position: absolute; bottom: 0px; right: 13em;
 }
 
 .profile-area .follower, .profile-area .follow{

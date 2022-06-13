@@ -1562,3 +1562,40 @@ $(function() {
         }
     });
 });
+
+$('#post').click(function() {
+    let sortTabs = $('#sort_tab > div').siblings();
+    sortTabs.removeClass('selected-icon');
+    $(this).addClass('selected-icon');
+    $('#post_list').removeClass('d-none');
+    $('#save_list').addClass('d-none');
+    $('#selling_list').addClass('d-none');
+    $('#has_nft_list').addClass('d-none');
+});
+$('#save').click(function() {
+    let sortTabs = $('#sort_tab > div').siblings();
+    sortTabs.removeClass('selected-icon');
+    $(this).addClass('selected-icon');
+    $('#save_list').removeClass('d-none');
+    $('#post_list').addClass('d-none');
+    $('#selling_list').addClass('d-none');
+    $('#has_nft_list').addClass('d-none');
+});
+$('#selling').click(function() {
+    let sortTabs = $('#sort_tab > div').siblings();
+    sortTabs.removeClass('selected-icon');
+    $(this).addClass('selected-icon');
+    $('#selling_list').removeClass('d-none');
+    $('#save_list').addClass('d-none');
+    $('#post_list').addClass('d-none');
+    $('#has_nft_list').addClass('d-none');
+  });
+$('#has_nft').click(function() {
+    let sortTabs = $('#sort_tab > div').siblings();
+    sortTabs.removeClass('selected-icon');
+    $(this).addClass('selected-icon');
+    $('#has_nft_list').removeClass('d-none');
+    $('#save_list').addClass('d-none');
+    $('#selling_list').addClass('d-none');
+    $('#post_list').addClass('d-none');
+});
