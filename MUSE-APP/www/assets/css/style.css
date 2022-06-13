@@ -892,11 +892,11 @@ img.search-option {
   height: auto;
 }
 
-.request-keep .keep_on {
+.keep_on {
   border:1px solid #ffd800;
 }
 
-.request_show img.keep-on, .request_show img.keep-off {
+img.keep-on, img.keep-off {
   width: 20px;
   height: 20px;
 }
