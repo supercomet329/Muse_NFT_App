@@ -771,6 +771,7 @@ function selectTab(target) {
     target.removeClass('not-selected-tab');
     target.addClass('selected-tab');
 }
+
 // 画像変更（profile_edit.html）
 $(function() {
     $('#cover_img_file_input').change(function() {
@@ -1572,6 +1573,7 @@ $('#post').click(function() {
     $('#selling_list').addClass('d-none');
     $('#has_nft_list').addClass('d-none');
 });
+
 $('#save').click(function() {
     let sortTabs = $('#sort_tab > div').siblings();
     sortTabs.removeClass('selected-icon');
@@ -1581,6 +1583,7 @@ $('#save').click(function() {
     $('#selling_list').addClass('d-none');
     $('#has_nft_list').addClass('d-none');
 });
+
 $('#selling').click(function() {
     let sortTabs = $('#sort_tab > div').siblings();
     sortTabs.removeClass('selected-icon');
@@ -1590,6 +1593,7 @@ $('#selling').click(function() {
     $('#post_list').addClass('d-none');
     $('#has_nft_list').addClass('d-none');
   });
+
 $('#has_nft').click(function() {
     let sortTabs = $('#sort_tab > div').siblings();
     sortTabs.removeClass('selected-icon');
