@@ -75,20 +75,16 @@
                     <h1 class="text-center mt-3 mb-3 contents-title font-weight-bold">SNSログイン</h1>
                 </div>
                 <div class="col-12 login-with-sns">
-                    <a href="https://twitter.com" target="_blank" rel="noreferrer">
-                        <button class="twitter-btn">
-                            <img src="assets/img/icon/twitter_icon.png" alt="twitter" class="twitter-icon">
-                            Twitterでログインする
-                        </button>
-                    </a>
+                    <button class="twitter-btn" id="twitter_btn">
+                        <img src="assets/img/icon/twitter_icon.png" alt="twitter" class="twitter-icon">
+                        Twitterでログインする
+                    </button>
                 </div>
                 <div class="col-12 login-with-sns mt-3">
-                    <a href="https://google.com" target="_blank" rel="noreferrer">
-                        <button class="google-btn">
-                            <img src="assets/img/icon/g-logo.png" alt="google" class="google-icon">
-                            Googleアカウントでログインする
-                        </button>
-                    </a>
+                    <button class="google-btn" id="google_btn">
+                        <img src="assets/img/icon/g-logo.png" alt="google" class="google-icon">
+                        Googleアカウントでログインする
+                    </button>
                 </div>
             </div>
             <hr class="hr-line mt-3">
@@ -127,5 +123,98 @@
     </footer>
 
 </body>
+
+<script>
+
+    $(function () {
+        // エンドポイントの定義
+        const baseUrl = "http://localhost:3000/api";
+        // ログインボタン押下時のイベント
+        $('#login-btn').on('click', function() {
+            // サブミットイベントを無効化
+            event.preventDefault();
+            // ログイン情報を取得
+            let email = $('#loginEmail').val();
+            let password = $('#loginPassword').val();
+            const apiType = "login";
+            // ログインを実行
+            login(email, password, apiType);
+        })
+
+        $('#twitter_btn').on('click', function() {
+            // ログイン情報を取得
+            const apiType = "twitter_login";
+            // ログインを実行
+            twitterLogin(apiType);
+        })
+
+        $('#google_btn').on('click', function() {
+            // ログイン情報を取得
+            const apiType = "google_login";
+            // ログインを実行
+            googleLogin(apiType);
+        })
+
+        // ログインAPIのエンドポイントにAjaxする
+        function login (email, password, apiType) {
+            $.ajax({
+                url: baseUrl,
+                type: "POST",
+                data:{
+                    "email": email,
+                    "password": password,
+                    "api_type": apiType,
+                },
+            }).done(function(data) {
+                // Ajaxで取得した値をローカルストレージに保存
+                localStorage.setItem('token', data.token);
+                console.log(data.result);
+                return data.result;
+            }).fail(function(data) {
+                console.log('Ajax fail (communication error)');
+                return false;
+            });
+        }
+
+        // TwitterでログインAPIのエンドポイントにAjaxする
+        function twitterLogin (apiType) {
+            $.ajax({
+                url: baseUrl,
+                type: "POST",
+                data:{
+                    "api_type": apiType,
+                },
+            }).done(function(data) {
+                // Ajaxで取得した値をローカルストレージに保存
+                localStorage.setItem('token', data.token);
+                console.log(data.result);
+                return data.result;
+            }).fail(function(data) {
+                console.log('Ajax fail (communication error)');
+                return false;
+            });
+        }
+
+        // GoogleでログインAPIのエンドポイントにAjaxする
+        function googleLogin (apiType) {
+            $.ajax({
+                url: baseUrl,
+                type: "POST",
+                data:{
+                    "api_type": apiType,
+                },
+            }).done(function(data) {
+                // Ajaxで取得した値をローカルストレージに保存
+                localStorage.setItem('token', data.token);
+                console.log(data.result);
+                return data.result;
+            }).fail(function(data) {
+                console.log('Ajax fail (communication error)');
+                return false;
+            });
+        }
+
+    });
+</script>
 
 </html>
