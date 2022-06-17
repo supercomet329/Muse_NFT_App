@@ -25,6 +25,8 @@
     <script type="text/javascript" src="js/muse.js"></script>
     <!-- Javascript(js/validate.js)読み込み -->
     <script type="text/javascript" src="js/validate.js"></script>
+    <!-- Javascript(js/api/login_api.js)読み込み -->
+    <script type="text/javascript" src="js/api/login_api.js"></script>
 </head>
 
 <body>
@@ -123,98 +125,5 @@
     </footer>
 
 </body>
-
-<script>
-
-    $(function () {
-        // エンドポイントの定義
-        const baseUrl = "http://localhost:3000/api";
-        // ログインボタン押下時のイベント
-        $('#login-btn').on('click', function() {
-            // サブミットイベントを無効化
-            event.preventDefault();
-            // ログイン情報を取得
-            let email = $('#loginEmail').val();
-            let password = $('#loginPassword').val();
-            const apiType = "login";
-            // ログインを実行
-            login(email, password, apiType);
-        })
-
-        $('#twitter_btn').on('click', function() {
-            // ログイン情報を取得
-            const apiType = "twitter_login";
-            // ログインを実行
-            twitterLogin(apiType);
-        })
-
-        $('#google_btn').on('click', function() {
-            // ログイン情報を取得
-            const apiType = "google_login";
-            // ログインを実行
-            googleLogin(apiType);
-        })
-
-        // ログインAPIのエンドポイントにAjaxする
-        function login (email, password, apiType) {
-            $.ajax({
-                url: baseUrl,
-                type: "POST",
-                data:{
-                    "email": email,
-                    "password": password,
-                    "api_type": apiType,
-                },
-            }).done(function(data) {
-                // Ajaxで取得した値をローカルストレージに保存
-                localStorage.setItem('token', data.token);
-                console.log(data.result);
-                return data.result;
-            }).fail(function(data) {
-                console.log('Ajax fail (communication error)');
-                return false;
-            });
-        }
-
-        // TwitterでログインAPIのエンドポイントにAjaxする
-        function twitterLogin (apiType) {
-            $.ajax({
-                url: baseUrl,
-                type: "POST",
-                data:{
-                    "api_type": apiType,
-                },
-            }).done(function(data) {
-                // Ajaxで取得した値をローカルストレージに保存
-                localStorage.setItem('token', data.token);
-                console.log(data.result);
-                return data.result;
-            }).fail(function(data) {
-                console.log('Ajax fail (communication error)');
-                return false;
-            });
-        }
-
-        // GoogleでログインAPIのエンドポイントにAjaxする
-        function googleLogin (apiType) {
-            $.ajax({
-                url: baseUrl,
-                type: "POST",
-                data:{
-                    "api_type": apiType,
-                },
-            }).done(function(data) {
-                // Ajaxで取得した値をローカルストレージに保存
-                localStorage.setItem('token', data.token);
-                console.log(data.result);
-                return data.result;
-            }).fail(function(data) {
-                console.log('Ajax fail (communication error)');
-                return false;
-            });
-        }
-
-    });
-</script>
 
 </html>
