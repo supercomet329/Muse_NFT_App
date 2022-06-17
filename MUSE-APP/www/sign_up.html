@@ -86,4 +86,42 @@
 
 </body>
 
+<script>
+
+    $(function () {
+        // エンドポイントの定義
+        const baseUrl = "http://localhost:3000/api";
+        // 仮登録ボタン押下時のイベント
+        $('#register-btn').on('click', function() {
+            // サブミットイベントを無効化
+            event.preventDefault();
+            // メールアドレスを取得
+            let email = $('#email').val();
+            const apiType = "registration";
+            // 仮登録を実行
+            register(email, apiType);
+        })
+
+        // 仮登録APIのエンドポイントにAjaxする
+        function register (email, apiType) {
+            $.ajax({
+                url: baseUrl,
+                type: "POST",
+                data:{
+                    "mail_address": email,
+                    "api_type": apiType,
+                },
+            }).done(function(data) {
+                console.log(data.result);
+                return data.result;
+            }).fail(function(data) {
+                console.log('Ajax fail (communication error)');
+                return false;
+            });
+        }
+
+    });
+
+</script>
+
 </html>
