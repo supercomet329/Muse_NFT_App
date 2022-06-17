@@ -1,6 +1,4 @@
 $(function () {
-    // エンドポイントの定義
-    const baseUrl = "http://localhost:3000/api";
     // ログインボタン押下時のイベント
     $('#login-btn').on('click', function(event) {
         // サブミットイベントを無効化
@@ -33,7 +31,7 @@ $(function () {
     // ログインAPIのエンドポイントにAjaxする
     function login (email, password, apiType) {
         $.ajax({
-            url: baseUrl,
+            url: endpoint,
             type: "POST",
             data:{
                 "mail_address": email,
@@ -41,6 +39,16 @@ $(function () {
                 "api_type": apiType,
             },
         }).done(function(data) {
+            // ログインに失敗した場合
+            if (!data.result){
+                console.log(data.error_message);
+                // エラーメッセージをモーダルで表示
+                $('#alert_modal').modal('show')
+                data.error_message.forEach(e => {
+                    let error_message = $(`<p class="text-danger">${e}</p>`);
+                    $('#modal_body').append(error_message);
+                });
+            }
             // Ajaxで取得した値をローカルストレージに保存
             localStorage.setItem('token', data.token);
             console.log(data.result);
@@ -54,7 +62,7 @@ $(function () {
     // TwitterでログインAPIのエンドポイントにAjaxする
     function twitterLogin (apiType) {
         $.ajax({
-            url: baseUrl,
+            url: endpoint,
             type: "POST",
             data:{
                 "api_type": apiType,
@@ -73,7 +81,7 @@ $(function () {
     // GoogleでログインAPIのエンドポイントにAjaxする
     function googleLogin (apiType) {
         $.ajax({
-            url: baseUrl,
+            url: endpoint,
             type: "POST",
             data:{
                 "api_type": apiType,
