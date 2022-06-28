@@ -1,9 +1,9 @@
 $(function () {
     let token = localStorage.getItem("token");
     const apiType = "list_message";
-    getTopImage(token, apiType)
+    getMessages(token, apiType)
     // トップページ画像取得APIのエンドポイントにAjaxする
-    function getTopImage(accessToken, apiType) {
+    function getMessages(accessToken, apiType) {
         $.ajax({
             url: endpoint,
             type: "POST",
