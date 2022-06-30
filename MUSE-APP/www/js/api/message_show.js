@@ -46,45 +46,49 @@ $(function () {
     $('#post_image_btn').on('click', function(e) {
         e.preventDefault();
         var apiType = "insert_message";
-        let $upfile = $('#messages_file_input');
-        let fd = new FormData();
-        fd.append("upfile", $upfile.prop('files')[0]);
-        console.log($upfile.prop('files')[0]);
-
-        $.ajax({
-            url: endpoint,
-            type: "POST",
-            data: JSON.stringify({
-                "access_token": token,
-                "target_user_id": target_user_id,
-                "api_type": apiType,
-                "image": fd,
-            }),
-            processData: false,
-            contentType: false,
-            cache: false,
-            dataType: "json",  // レスポンスをJSONとしてパースする
-        }).done(function (data) {
-            // トップページ画像の取得に失敗した場合
-            if (!data.result) {
-                エラーメッセージをモーダルで表示
-                $('#alert_modal').modal('show')
-                data.error_message.forEach(e => {
-                    let error_message = $(`<p class="text-danger">${e}</p>`);
-                    $('#modal_body').append(error_message);
-                });
+        let $upfile = $('input[name="upfile"]');
+        let file = $upfile.prop('files')[0];
+        let fr = new FileReader();
+        fr.readAsDataURL(file);
+        fr.onloadend = function() {
+            let base64data = fr.result;
+            $.ajax({
+                url: endpoint,
+                type: "POST",
+                processData: false,
+                contentType: false,
+                cache: false,
+                data: JSON.stringify({
+                    "access_token": token,
+                    "target_user_id": target_user_id,
+                    "api_type": apiType,
+                    "image": base64data,
+                }),
+                dataType: "json",  // レスポンスをJSONとしてパースする
+            }).done(function (data) {
+                // トップページ画像の取得に失敗した場合
+                console.log(data);
+                if (!data.result) {
+                    // エラーメッセージをモーダルで表示
+                    $('#alert_modal').modal('show')
+                    data.error_message.forEach(e => {
+                        let error_message = $(`<p class="text-danger">${e}</p>`);
+                        $('#modal_body').append(error_message);
+                    });
+                    return false;
+                }
+                console.log(data);
+                // Ajaxで取得したデータを表示
+                $.each(data.content, function (index, value) {
+                    appendDetailMessage(value);
+                })
+                return data.result;
+            }).fail(function (data) {
+                console.log('Ajax fail (communication error)');
                 return false;
-            }
-            console.log(data);
-            // Ajaxで取得したデータを表示
-            $.each(data.content, function (index, value) {
-                appendDetailMessage(value);
-            })
-            return data.result;
-        }).fail(function (data) {
-            console.log('Ajax fail (communication error)');
-            return false;
-        });
+            });
+
+        }
     });
 
     // トップページ画像取得APIのエンドポイントにAjaxする

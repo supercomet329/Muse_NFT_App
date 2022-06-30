@@ -948,9 +948,9 @@ $(function() {
             return false;
         }
     });
-    // $('#post_image_btn').on('click', function() {
-    //     $('.modal').fadeOut();
-    // });
+    $('#post_image_btn').on('click', function() {
+        $('.modal').fadeOut();
+    });
 });
 
 // フォローする、フォロー中の選択機能
