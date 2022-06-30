@@ -1603,3 +1603,45 @@ $('#has_nft').click(function() {
     $('#selling_list').addClass('d-none');
     $('#post_list').addClass('d-none');
 });
+
+$(function () {
+    $('#mypost_icon').click(function () {
+      $('#mypost_icon').addClass('selected-icon');
+      $('#favorite_icon').removeClass('selected-icon');
+      $('#favorite_list').addClass('d-none');
+      $('#mypost_list').removeClass('d-none');
+    });
+
+    $('#favorite_icon').click(function () {
+      $('#favorite_icon').addClass('selected-icon');
+      $('#mypost_icon').removeClass('selected-icon');
+      $('#mypost_list').addClass('d-none', 'selected-icon');
+      $('#favorite_list').removeClass('d-none', 'selected-icon');
+    });
+
+    $('#cover_image').click(function () {
+      magnifyImg($(this).attr('src'));
+    });
+
+    $('#profile_icon').click(function () {
+      magnifyImg($(this).attr('src'));
+    });
+
+    $('.close-btn').click(function () {
+      $('.modal').fadeOut();
+      $('body,html').css('overflow-y', 'visible');
+      return false
+    });
+});
+
+// 拡大した画像を表示
+function magnifyImg(imgSrc) {
+    $('.bigimg').children().attr('src', imgSrc).css({
+        'width': '100vh',
+        'height': '60vh',
+        'object-fit': 'cover'
+    });
+    $('.modal').fadeIn();
+    $('body,html').css('overflow-y', 'hidden');
+    return false
+};
