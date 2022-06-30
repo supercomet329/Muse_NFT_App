@@ -38,10 +38,14 @@
     <form method="POST">
         <div class="container message-show-area" id="message_show_area">
             <div class="font-weight-bold title border-bottom-solid mt-4" id="display_name">
+                <input type="hidden" name="user_id" value="" />
+                <select class="p-user-list__search-select" name="user_id" id="user_list">
+                    <option value="" id="follow_user" class="d-none"></option>
+                </select>
             </div>
             <div class="row mb-5 pb-3" id="detail_message_list">
                 <div class="d-none col-12 justify-content-center" id="date_area">
-                    <div class="main-color font-weight-bold text-white text-center rounded-pill small w-25 mt-4" id="date">
+                    <div class="main-color font-weight-bold text-white text-center rounded-pill small w-25 mt-4 date" id="date">
                     </div>
                 </div>
                 <div class="col-12 d-none" id="balloon_l">
