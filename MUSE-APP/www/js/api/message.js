@@ -40,7 +40,7 @@ $(function () {
     }
 
     function appendMessage(e, value) {
-        e.attr('href', '../../../MUSE-APP/MUSE-APP/www/message_show.html' + `?user_id=${value.user_id}`);
+        e.attr('href', './message_show.html' + `?user_id=${value.user_id}`);
         e.find('#author_image').attr('src', value.author_image);
         e.find('#display_name').text(value.display_name);
         e.find('#message').text(value.message);
