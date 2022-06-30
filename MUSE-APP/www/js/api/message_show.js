@@ -131,17 +131,17 @@ $(function () {
         let $balloonL = $('#balloon_l');
         let $balloonR = $('#balloon_r');
         let $dataArea = $('#date_area');
-        let $display_name = $('#display_name').text().trim()
+        let $display_name = $('#display_name').text().trim();
 
         $.each(value, function (key, v) {
             var $balloonClone = '';
             var $dataAreaClone = '';
             var before_send_day = '';
 
-            if (v.user_id === target_user_id) {
-                var $balloonClone = $balloonR.clone();
-            } else {
+            if (v.user_id == target_user_id) {
                 var $balloonClone = $balloonL.clone();
+            } else {
+                var $balloonClone = $balloonR.clone();
             }
 
             if (! $display_name) {
