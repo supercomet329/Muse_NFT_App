@@ -187,6 +187,9 @@ $(function () {
         let $upfile = $('input[name="upfile"]');
         let file = $upfile.prop('files')[0];
         let fr = new FileReader();
+        if (! getParam('user_id')) {
+            targetUserId = $('#user_list option:selected').val();
+        }
         fr.readAsDataURL(file);
         fr.onloadend = function() {
             let base64data = fr.result;
@@ -198,7 +201,7 @@ $(function () {
                 cache: false,
                 data: JSON.stringify({
                     "access_token": token,
-                    "target_user_id": target_user_id,
+                    "target_user_id": targetUserId,
                     "api_type": apiType,
                     "image": base64data,
                 }),
