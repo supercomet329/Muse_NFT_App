@@ -1,5 +1,4 @@
 // 通常新規登録ページ(sign_up.html)
-// 入力項目のフォーカスが外れた際に処理を実行
 $(function() {
     // メールアドレスのフォーカスが外れた際にcheckInput実行
     $('#email').on('blur', function() {
@@ -956,12 +955,12 @@ $(function() {
 // フォローする、フォロー中の選択機能
 $(function () {
     $(document).on('click', '.follow-off', function() {
-      let follow_on = $('<button type="button"class="btn btn-primary rounded-pill btn-sm text-white btn-lg main-color follow-btn follow-on">フォロー中</button>');
+      let follow_on = $(`<button data-id="${$(this).data('id')}" type="button"class="btn btn-primary rounded-pill btn-sm text-white btn-lg main-color follow-btn follow-on" id="follow-on">フォロー中</button>`);
       $(this).replaceWith(follow_on);
     });
 
     $(document).on('click', '.follow-on', function() {
-      let follow_off = $('<button type="button" class="btn rounded-pill btn-outline-primary btn-sm follow-btn follow-off">フォローする</button>');
+      let follow_off = $(`<button type="button" data-id="${$(this).data('id')}" class="btn rounded-pill btn-outline-primary btn-sm follow-btn follow-off" id="follow-off">フォローする</button>`);
       $(this).replaceWith(follow_off);
     });
 });
