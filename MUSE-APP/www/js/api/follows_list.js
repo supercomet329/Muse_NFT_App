@@ -51,7 +51,7 @@ $(function () {
                         <img src="${follow.profile_image}" class="rounded-circle profile-icon">
                     </div>
                     <div class="col-6 d-block">
-                        <p class="name font-weight-bold mb-1">${follow.user_info.data.display_name}</p>
+                        <p class="name font-weight-bold mb-1">${follow.author_name}</p>
                         <p class="profile-detail mb-1">${follow.description}</p>
                     </div>
                     <div class="col-4 d-block btn-area text-right pl-0 my-auto">
