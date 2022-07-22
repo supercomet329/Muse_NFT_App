@@ -4,8 +4,7 @@
 <head>
     <title>Muse | Top</title>
     <!-- Required meta tags -->
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta charset="utf-8">
     <!-- Icon -->
     <link rel="shortcut icon" href="assets/img/icon/logo.png">
@@ -16,6 +15,17 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Javascript(js/const.js)読み込み -->
+    <script type="text/javascript" src="js/const.js"></script>
+    <!-- Javascript(js/muse.js)読み込み -->
+    <script type="text/javascript" src="js/muse.js"></script>
+    <!-- Javascript(js/validate.js)読み込み -->
+    <script type="text/javascript" src="js/validate.js"></script>
 </head>
 
 <body>
@@ -32,109 +42,19 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <ul class="list-area">
-                    <a href="message_show.html">
+                <ul class="list-area" id="list_area">
+                    <a href="" id="one_message" class="d-none">
                         <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_64747350_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
-                            </span>
-                        </li>
-                    </a>
-                    <a href="message_show.html">
-                        <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_27669641_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
-                            </span>
-                        </li>
-                    </a>
-                    <a href="message_show.html">
-                        <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_33901813_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
-                            </span>
-                        </li>
-                    </a>
-                    <a href="message_show.html">
-                        <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_40272765_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
-                            </span>
-                        </li>
-                    </a>
-                    <a href="message_show.html">
-                        <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_40855053_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
-                            </span>
-                        </li>
-                    </a>
-                    <a href="message_show.html">
-                        <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_45010284_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
-                            </span>
-                        </li>
-                    </a>
-                    <a href="message_show.html">
-                        <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_56091176_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
-                            </span>
-                        </li>
-                    </a>
-                    <a href="message_show.html">
-                        <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_58266021_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
-                            </span>
-                        </li>
-                    </a>
-                    <a href="message_show.html">
-                        <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_58642077_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
-                            </span>
-                        </li>
-                    </a>
-                    <a href="message_show.html">
-                        <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_58661692_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
-                            </span>
-                        </li>
-                    </a>
-                    <a href="message_show.html">
-                        <li class="d-flex align-items-start pt-2">
-                            <img src="assets/img/pixta_63325478_M.jpg" class="rounded-circle">
-                            <span class="name text-dark">UserName<br><span class="content">メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ内容メッセージ</span></span>
-                            <span class="created_at">
-                            2021/04/20<br>10:00
+                            <img src="" class="rounded-circle" id="author_image">
+                            <span class="name text-dark" id="display_name"><br><span class="content" id="message"></span></span>
+                            <span class="created_at" id="send_day">
+                            <br><span id="send_tile"></span>
                             </span>
                         </li>
                     </a>
                 </ul>
             </div>
-            <div class="col-12 d-flex justify-content-end">    
+            <div class="col-12 d-flex justify-content-end">
                 <div class="message-add-icon-area">
                     <a href="message_add.html"><img src="assets/img/icon/image_upload.png" class="message-add-icon" alt="メッセージ作成"></a>
                 </div>
@@ -158,12 +78,7 @@
         </nav>
     </footer>
 
+    <!-- Javascript(js/api/message.js)読み込み -->
+    <script type="text/javascript" src="js/api/message.js"></script>
 </body>
-
-<!-- Optional JavaScript -->
-<!-- jQuery -->
-<script src="assets/js/jquery-3.6.0.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-
 </html>
