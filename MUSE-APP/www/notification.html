@@ -4,8 +4,7 @@
 <head>
     <title>Muse | Top</title>
     <!-- Required meta tags -->
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta charset="utf-8">
     <!-- Icon -->
     <link rel="shortcut icon" href="assets/img/icon/logo.png">
@@ -16,6 +15,17 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Javascript(js/const.js)読み込み -->
+    <script type="text/javascript" src="js/const.js"></script>
+    <!-- Javascript(js/muse.js)読み込み -->
+    <script type="text/javascript" src="js/muse.js"></script>
+    <!-- Javascript(js/validate.js)読み込み -->
+    <script type="text/javascript" src="js/validate.js"></script>
 </head>
 
 <body>
@@ -32,105 +42,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <ul class="list-area">
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_64747350_M.jpg" class="rounded-circle" width="50" height="50">
-                        <div class="font-weight-bold">
-                          ○○さんが「いいね」しました。
-                        </div>
-                        <div class="screen_id">
-                          投稿タイトル
-                        </div>
-                    </li>
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_27669641_M.jpg" class="rounded-circle">
-                        <div class="font-weight-bold">
-                          ○○さんが「いいね」しました。
-                        </div>
-                        <div>
-                          投稿タイトル
-                        </div>
-                    </li>
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_33901813_M.jpg" class="rounded-circle">
-                        <img src="assets/img/pixta_85053177_M.jpg" class="rounded-circle">
-                        <div class="font-weight-bold">
-                          ○○さんと○○さんにフォローされました。
-                        </div>
-                        <div>
-                          投稿タイトル
-                        </div>
-                    </li>
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_40272765_M.jpg" class="rounded-circle">
-                        <div class="font-weight-bold">
-                          ○○さんが「いいね」しました。
-                        </div>
-                        <div>
-                          投稿タイトル
-                        </div>
-                    </li>
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_40855053_M.jpg" class="rounded-circle">
-                        <div class="font-weight-bold">
-                          ○○さんに依頼が受注されました。
-                        </div>
-                        <div>
-                          投稿タイトル
-                        </div>
-                    </li>
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_45010284_M.jpg" class="rounded-circle">
-                        <div class="font-weight-bold">
-                          ○○さんに「コメント」されました。
-                        </div>
-                        <div>
-                          投稿タイトル
-                        </div>
-                    </li>
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_56091176_M.jpg" class="rounded-circle">
-                        <div class="font-weight-bold">
-                          ○○さんが「いいね」しました。
-                        </div>
-                        <div>
-                          投稿タイトル
-                        </div>
-                    </li>
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_58266021_M.jpg" class="rounded-circle">
-                        <div class="font-weight-bold">
-                          ○○さんが「いいね」しました。
-                        </div>
-                        <div>
-                          投稿タイトル
-                        </div>
-                    </li>
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_58642077_M.jpg" class="rounded-circle">
-                        <div class="font-weight-bold">
-                          ○○さんが「いいね」しました。
-                        </div>
-                        <div>
-                          投稿タイトル
-                        </div>
-                    </li>
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_58661692_M.jpg" class="rounded-circle">
-                        <div class="font-weight-bold">
-                          ○○さんが「いいね」しました。
-                        </div>
-                        <div>
-                          投稿タイトル
-                        </div>
-                    </li>
-                    <li class="pt-2">
-                        <img src="assets/img/pixta_63325478_M.jpg" class="rounded-circle">
-                        <div class="font-weight-bold">
-                          ○○さんが「いいね」しました。
-                        </div>
-                        <div>
-                          投稿タイトル
+                <ul class="list-area" id="list_area">
+                    <li class="pt-2 d-none" id="one_notification">
+                        <img src="" class="rounded-circle" id="profile_image">
+                        <div class="font-weight-bold" id="message">
                         </div>
                     </li>
                 </ul>
@@ -154,12 +69,8 @@
         </nav>
     </footer>
 
+    <!-- Javascript(js/api/notification.js)読み込み -->
+    <script type="text/javascript" src="js/api/notification.js"></script>
 </body>
-
-<!-- Optional JavaScript -->
-<!-- jQuery -->
-<script src="assets/js/jquery-3.6.0.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="assets/js/bootstrap.bundle.min.js"></script>
 
 </html>
